@@ -1,0 +1,21 @@
+{
+    "request": {
+      "urlPathPattern": "/request",
+      "method": "GET",
+      "queryParameters": {
+        "name": {
+          "matches": "[a-z]+"
+        }
+      }
+    },
+    "response": {
+      "status": 200,
+      "jsonBody": {
+          "name" : "{{request.query.name}}"
+      },
+      "headers": {
+        "Content-Type": "application/json;charset=UTF-8",
+        "Date": "{{now format = 'EEE, dd MMM yyyy HH:mm:ss z'}}"
+      }
+    }
+  }
